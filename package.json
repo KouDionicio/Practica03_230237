@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Manejo de Sesiones en NodeJS y Express",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.2",
-    "express-session": "^1.18.1"
+    "express-session": "^1.18.1",
+    "moment-timezone": "^0.5.46"
   }
 }

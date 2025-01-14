@@ -1,6 +1,6 @@
 import express, { request, response } from "express";
 import session from "express-session";
-
+import moment from "moment-timezone"
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.use(
         secret: 'p03-CPD#seiyakoulovers-SesionesPersistentes',
         resave: false,
         saveUninitialized: true,
-        cookie: {maxAge: 24 * 60 * 1000}
+        cookie: {maxAge: 24 * 60 * 60 * 1000}
     })
 )
 
