@@ -48,12 +48,16 @@ app.get('/estado-sesion', (request, response) => {
         const minutos = Math.floor((antiguedadMs % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((antiguedadMs % (1000 * 60)) / 1000);
 
+        //Covertimos las fechas al huso horario CDMX
+        const inicioCDMX = moment(inicio).tz('America/Mexico_City').format('YYYY-MM-DD HH:mm:ss');
+        const ultimoCDMX = moment(ultimoAcceso).tz('America/Mexico_City').format('YYYY-MM-DD HH:mm:ss');
+
         // Convertimos la fecha al formato ISO para su visualización
         response.json({
             mensaje: 'Estado de la Sesión',
             sesionID: request.sessionID,
-            inicio: inicio.toISOString(),  // Esto ahora debería funcionar sin error
-            ultimoAcceso: ultimoAcceso.toISOString(),
+            inicio: inicioCDMX,
+            ultimoAcceso: ultimoCDMX,
             antiguedad: `${horas} horas, ${minutos} minutos, ${segundos} segundos`
         });
     } else {
