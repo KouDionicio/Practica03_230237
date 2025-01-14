@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
     session({
-        secret: 'p03-CPD#seiyakoulovers',
+        secret: 'p03-CPD#seiyakoulovers-SesionesPersistentes',
         resave: false,
         saveUninitialized: true,
         cookie: {maxAge: 24 * 60 * 1000}
